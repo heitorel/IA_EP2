@@ -1,0 +1,38 @@
+Desempenho do classificador
+O classificador de Naive-Bayes não apresentou um bom desempenho na aplicação à 
+base de dados em questão, pois a matriz com os atributos das frases é esparsa. 
+Logo, a quantidade elevada de zeros faz com que as médias e os desvios utilizados 
+nos cálculos sejam arredondados para zero. 
+Sendo assim, todos os elementos são classificados como negativos.
+
+Matriz de Confusão 
+# Ver nos resultados do código após finalizar
+
+Erros Obtidos pela Rede
+O número de erros, neste caso, é sempre igual ao número de frases com o rótulo "positivo".
+
+Crossvalidation
+A construção da técnica K-fold foi realizada com base no K número de grupos, 
+onde os elementos são divididos e são aleatoriamente alocados em cada grupo. 
+O processo iterativo se repete K vezes até que todos os grupos tenham passado 
+pela fase de teste do classificador. Os elementos dos K-1 grupos remanescentes 
+são usados no conjunto de treinamento em cada iteração. Ao final do processo, 
+os números de erros e de acertos são acumulados nos contadores.
+
+Desempenho do Naive Bayes com e sem os stop words
+Ainda que não seja significativa, houve uma melhora no desempenho do classificador 
+após a remoção das stop words. Esse comportamento provavelmente se deve à redução 
+de atributos na matriz dos dados, ou seja, à redução do vocabulário de palavras.
+
+Tecnologias utilizadas
+Todos os códigos utilizados foram implementados em linguagem Python usando o 
+software gratuito Anaconda, através do notebook Jupyter. As bibliotecas carregadas 
+foram a numpy e a pandas, onde os algoritmos de manipulação de matrizes, 
+vetores e tabelas já existem.
+
+Resultados e Construção do Holdout
+O desempenho do classificador com a técnica Holdout teve aumento em relação ao K-fold. 
+Esse comportamento pode ser explicado em decorrência da quantidade de elementos rotulados 
+como positivos ou negativos nos grupos de treinamento e teste. Neste caso, uma fração do 
+número total de elementos é escolhida para compor o grupo de teste, enquanto na técnica 
+anterior, o número de elementos no grupo de teste fica restrito apenas ao parâmetro K.
